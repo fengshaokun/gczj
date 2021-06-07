@@ -1,16 +1,7 @@
 spring:
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/custumer_db?serverTimezone=UTC
-    username: root
-    password: root
   data:
     solr:
       host: 'http://42.192.51.67:8080/solr/gczj'
-
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 server:
   port: 8081

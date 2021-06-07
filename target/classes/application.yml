@@ -4,6 +4,8 @@ spring:
       host: 'http://42.192.51.67:8080/solr/gczj'
 
 server:
-  port: 8081
+  port: 8090
   servlet:
     context-path: /gczj
+logging:
+  config: classpath:logback-spring.xml

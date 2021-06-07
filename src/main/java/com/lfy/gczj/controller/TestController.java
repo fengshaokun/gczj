@@ -5,6 +5,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.lfy.gczj.bean.IndexEntry;
 import com.lfy.gczj.bean.SearchBean;
 import lombok.SneakyThrows;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -24,6 +26,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+@Log4j2
 @RestController
 public class TestController {
 
@@ -103,7 +106,7 @@ public class TestController {
     @RequestMapping(value = "search", method = RequestMethod.GET)
     @ResponseBody
     public JSONObject search(String search,int page,int limit){
-
+         log.info("搜索词为："+search);
         try {
             SolrQuery params = new SolrQuery();
 
@@ -126,7 +129,7 @@ public class TestController {
 
             long numFound = results.getNumFound();
 
-            System.out.println(numFound);
+
             //获取高亮显示的结果, 高亮显示的结果和查询结果是分开放的
             List res = new ArrayList();
             JSONObject j = new JSONObject();
